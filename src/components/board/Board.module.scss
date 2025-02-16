@@ -1,0 +1,71 @@
+
+.boardConteiner {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly; 
+    flex-wrap:wrap-reverse;
+    align-items: center; 
+
+    width: 30vh;
+    height: 30vh;
+
+    padding: 5vh;
+    
+    background-color: rgb(230, 219, 219);
+    border: 0.5vh purple solid;
+    border-radius: 50%;
+    gap: 1;
+    img {
+        cursor: pointer;
+        transition: transform 0.3s ease; 
+        object-fit: contain; 
+        margin: 1vh;
+    }
+
+    img:hover {
+        transform: scale(1.2);  
+    }
+}
+
+
+
+.size1 {
+    
+    height: 5vh;
+    width: auto ;
+}
+
+.size2 {
+    height: 10vh;
+    width: auto;
+}
+
+.size3 {
+    height: 8vh;
+    width: auto;
+}
+
+.size4 {
+    height: 6vh;
+    width: auto;
+}
+
+.size5 {
+    height: 4vh;
+    width: auto;
+}
+
+.size6 {
+    height: 5vh;
+    width: auto;
+}
+
+.size7 {
+    height: 7vh ;
+    width: auto;
+}
+
+.size8 {
+    height: 9vh;
+    width: auto;
+}
