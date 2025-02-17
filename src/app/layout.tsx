@@ -1,7 +1,6 @@
 import "./globals.module.scss";
 import styles from './globals.module.scss'
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -11,7 +10,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={styles.body}
       >
-        {children}
+          {children}
       </body>
     </html>
   );

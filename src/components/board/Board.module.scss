@@ -11,8 +11,8 @@
 
     padding: 5vh;
     
-    background-color: rgb(230, 219, 219);
-    border: 0.5vh purple solid;
+    background-color: rgb(187, 164, 164);
+    border: 0.5vh rgb(199, 173, 25) solid;
     border-radius: 50%;
     gap: 1;
     img {
@@ -27,7 +27,11 @@
     }
 }
 
-
+.board{
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+  }
 
 .size1 {
     

@@ -8,12 +8,7 @@
 
 .body {
   @include display;
-  background-color: gray;
+  background-color: #961e1e;
   height: 100vh;
 }
 
-.board{
-  display: flex;
-  flex-direction: column;
-  gap: 10vh;
-}
