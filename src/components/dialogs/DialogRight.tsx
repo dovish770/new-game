@@ -3,15 +3,17 @@ import { Dialog as MUIDialog, DialogContent, Typography } from '@mui/material';
 import { useAtom } from 'jotai';
 import styles from './Dialog.module.scss'
 import { useEffect, useState } from 'react';
+import { getTimer } from '@/src/services/timerService';
 
 export default function Dialog() {
   const [isTrue] = useAtom(isTrueAtom);
   const [startTime] = useAtom(timeAtom);
-  const [timer, setTimer] = useState<number>(0)
+  const [timer, setTimer] = useState<string>('')
 
   useEffect(() => {
     if (isTrue){
-      setTimer((Date.now() - startTime) / 1000);
+      let time = (Date.now() - startTime) / 1000;
+      setTimer(getTimer(time));
     }
   }, [isTrue]);
 
@@ -25,7 +27,7 @@ export default function Dialog() {
           nice job!
         </h3>
         <h4>
-          time: {timer.toFixed(2)} seconds!
+          it took you {timer}
         </h4>
       </div>
     </MUIDialog>
