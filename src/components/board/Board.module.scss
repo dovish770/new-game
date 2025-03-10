@@ -25,16 +25,12 @@
     img:hover {
         transform: scale(1.2);  
     }
+    img:active {
+        transform: scale(0.90);  
+    }
 }
 
-.board{
-    display: flex;
-    flex-direction: column;
-    gap: 10vh;
-  }
-
 .size1 {
-    
     height: 5vh;
     width: auto ;
 }

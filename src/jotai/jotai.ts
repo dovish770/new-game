@@ -14,3 +14,5 @@ export const shuffledItemsAtom = atom<Shape[]>([])
 export const shuffledItems2Atom = atom<Shape[]>([])
 
 export const timeAtom = atom<number>(0)
+
+export const roundsAtom = atom<number>(1)

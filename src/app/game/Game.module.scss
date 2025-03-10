@@ -1,0 +1,52 @@
+
+.board {
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+  }
+
+  .sideDiv {
+    position: fixed;
+    top: 5vh;
+    left: 5vh;
+  }
+
+  .sideDiv p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b41818;
+    height: 3vh;;
+    padding: .5vh;
+    border-radius: 10%;
+    color: rgb(255, 222, 222);
+  }
+
+  .backToHome {
+    background-color: rgba(42, 87, 209, 0.87);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    border: solid .5vh rgba(52, 204, 65, 0.877);
+    width: 10vh;
+    height: 7vh;
+
+    color: rgba(56, 212, 69, 0.877);
+    font-size: 1.6vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    transition: background-color 0.3s ease-in-out,
+                box-shadow 0.3s ease-in-out,
+                color 0.3s ease-in-out,
+                border-color 0.3s ease-in-out,
+                transform 0.3s ease-in-out;
+  }
+
+.backToHome:hover {
+    transform: scale(1.03);
+}
+
+.backToHome:active {
+    transform: scale(0.90);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
