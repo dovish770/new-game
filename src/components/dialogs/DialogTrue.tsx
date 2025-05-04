@@ -5,7 +5,7 @@ import styles from './Dialog.module.scss'
 import { useEffect, useState } from 'react';
 import { getTimer } from '@/src/services/timerService';
 
-export default function Dialog() {
+export default function DialogTrue() {
   const [isTrue] = useAtom(isTrueAtom);
   const [startTime] = useAtom(timeAtom);
   const [timer, setTimer] = useState<string>('')

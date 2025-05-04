@@ -1,5 +1,5 @@
 
-.boardConteiner {
+.CardContainer {
     display: flex;
     flex-direction: row;
     justify-content:space-evenly; 
@@ -29,6 +29,15 @@
         transform: scale(0.90);  
     }
 }
+
+.boardContainer {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    gap: 3vh;
+}
+
+
 
 .size1 {
     height: 5vh;
