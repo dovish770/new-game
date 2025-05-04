@@ -1,7 +1,46 @@
-import { store, fullShpesListAtom, idsAtom, shuffledItemsAtom, commonAtom, shuffledItems2Atom, isTrueAtom, timeAtom } from "../jotai/jotai";
+import { store, fullShpesListAtom, idsAtom, shuffledItemsAtom, commonAtom, shuffledItems2Atom, isTrueAtom, timeAtom, roundsAtom, endGameFlagAtom } from "../jotai/jotai";
 import { nameNPath } from "../types/shape";
 import Shape from "../models/shapeModel";
 import { getRandomIndex, shuffleArray } from "../utils/helpFunctions";
+
+export const setTwoShapesListsFirstTime = () => {
+    store.set(timeAtom, Date.now());
+    shuffle();
+};
+
+export const setTwoShapesLists = () => {
+    const rounds = store.get(roundsAtom);
+    store.set(roundsAtom, rounds-1);
+    
+    if (store.get(roundsAtom)<1){
+        setTimeout(() => {
+            store.set(isTrueAtom, false);
+            store.set(endGameFlagAtom, true);
+        }, 2000);
+        return
+    }
+    
+    setTimeout(() => {
+        store.set(isTrueAtom, false);
+        store.set(timeAtom, Date.now());
+        shuffle();
+    }, 2000);
+    
+    shuffle();
+};
+
+
+const shuffle = () => {
+    const firstShuffledList = getShuffledShapes();
+    store.set(shuffledItemsAtom, firstShuffledList);
+    
+    const commonShape = firstShuffledList[getRandomIndex(firstShuffledList.length)].Sname;
+    store.set(commonAtom, commonShape);
+    
+    const secondShuffledList = getShuffledShapes2(commonShape, firstShuffledList);
+    store.set(shuffledItems2Atom, secondShuffledList ?? []);
+}
+
 
 export const getShuffledShapes = (): Shape[] => {
     const shapes: nameNPath[] = shuffleArray(store.get(fullShpesListAtom))
@@ -33,35 +72,3 @@ export const getShuffledShapes2 = (shape: string, shapes1: Shape[]): Shape[] | n
         className: shuffleClassNames[idx]
     }));
 };
-
-export const setTwoShapesLists = () => {
-    setTimeout(() => {
-        store.set(isTrueAtom, false);
-        store.set(timeAtom, Date.now());
-    }, 2000);
-
-    const firstShuffledList = getShuffledShapes();
-    store.set(shuffledItemsAtom, firstShuffledList);
-
-    const commonShape = firstShuffledList[getRandomIndex(firstShuffledList.length)].Sname;
-    store.set(commonAtom, commonShape);
-
-    const secondShuffledList = getShuffledShapes2(commonShape, firstShuffledList);
-    store.set(shuffledItems2Atom, secondShuffledList ?? []);
-};
-
-
-export const setTwoShapesListsFirstTime = () => {
-    store.set(timeAtom, Date.now());
-    const firstShuffledList = getShuffledShapes();
-    store.set(shuffledItemsAtom, firstShuffledList);
-    
-    const commonShape = firstShuffledList[getRandomIndex(firstShuffledList.length)].Sname;
-    store.set(commonAtom, commonShape);
-
-    const secondShuffledList = getShuffledShapes2(commonShape, firstShuffledList);
-    store.set(shuffledItems2Atom, secondShuffledList ?? []);
-};
-
-
-

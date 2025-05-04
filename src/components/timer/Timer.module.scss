@@ -1,0 +1,35 @@
+.timerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    img {
+        height: 6vh;
+    }
+}
+
+.line {
+    height: 1vh;
+    width: 40vh;
+    background-color: rgb(252, 236, 236);
+    border-radius: 3vh;
+    overflow: hidden;
+    border: 0.2vh solid rgb(252, 236, 236);
+}
+
+.innerLine{
+    width: 100%;
+    height: 100%; 
+    background-color: rgb(93, 190, 28);
+    animation: countdown 10s linear forwards;
+}
+
+@keyframes countdown {
+    0% {
+      width: 100%;
+    }
+    100% {
+        background-color: rgb(241, 0, 0);
+        width: 0%;
+    }
+  }

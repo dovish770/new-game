@@ -7,12 +7,17 @@ export const store = createStore();
 export const fullShpesListAtom = atom(fullSahpesList);
 export const idsAtom = atom(ids);
 
-export const isTrueAtom = atom<boolean>(false)
-export const commonAtom = atom<string>('')
+export const isTrueAtom = atom<boolean>(false);
+export const commonAtom = atom<string>('');
 
-export const shuffledItemsAtom = atom<Shape[]>([])
-export const shuffledItems2Atom = atom<Shape[]>([])
+export const shuffledItemsAtom = atom<Shape[]>([]);
+export const shuffledItems2Atom = atom<Shape[]>([]);
 
-export const timeAtom = atom<number>(0)
+export const timeAtom = atom<number>(0);
 
-export const roundsAtom = atom<number>(1)
+export const roundsAtom = atom<number>(1);
+
+export const endGameFlagAtom = atom<boolean>(false);
+
+export const amountOfRoundsAtom = atom<number>(0)
+export const amountOfCorrectAtom = atom<number>(0)
